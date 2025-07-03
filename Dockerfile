@@ -13,4 +13,4 @@ RUN chmod 644 /app/app.jar
 ENV JAVA_OPTS=""
  
 # Usar sh -c para expansión de variables de entorno
-CMD ["sh", "-c", "java $JAVA_OPTS -Dspring.profiles.active=$APP_ENV -jar /app/app.jar"]
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Dspring.profiles.active=$APP_ENV -jar /app/app.jar"]
